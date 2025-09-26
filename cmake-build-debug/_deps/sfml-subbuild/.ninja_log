@@ -1,0 +1,21 @@
+# ninja log v6
+2	70	7805955657776369	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	917851d7e3e9220c
+2	70	7805955657776369	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	917851d7e3e9220c
+72	13026	7805955787317219	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	39f2bc719bb5e840
+72	13026	7805955787317219	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	39f2bc719bb5e840
+13026	13370	7805955787391573	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	8ef26c6235692099
+13026	13370	7805955787391573	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	8ef26c6235692099
+13370	13532	7805955791532316	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	45e9702b61414c32
+13370	13532	7805955791532316	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	45e9702b61414c32
+13532	13714	7805955793160076	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	f7a692806b704a36
+13532	13714	7805955793160076	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	f7a692806b704a36
+13715	13861	7805955795556026	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	42cb3e0fe3ff1877
+13715	13861	7805955795556026	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	42cb3e0fe3ff1877
+13861	13940	7805955796419143	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	1a32ac5973746870
+13861	13940	7805955796419143	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	1a32ac5973746870
+13940	14073	7805955797255867	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	fd18738745b5cfab
+13940	14073	7805955797255867	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	fd18738745b5cfab
+14073	14173	7805955798804658	CMakeFiles/sfml-populate-complete	c5b447abe3e137e8
+14073	14173	7805955798804658	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	c5b447abe3e137e8
+14073	14173	7805955798804658	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete	c5b447abe3e137e8
+14073	14173	7805955798804658	C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	c5b447abe3e137e8
