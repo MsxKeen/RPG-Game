@@ -1,3 +1,4 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 int main() {
@@ -5,28 +6,27 @@ int main() {
     sf::ContextSettings settings;
     settings.antialiasingLevel=8;
     sf::RenderWindow window(sf::VideoMode(800,600),"RPG Game",sf::Style::Default,settings);
-    sf::CircleShape shape(50.0f,6);
-    shape.setFillColor(sf::Color(100,250,50));
-    shape.setPosition(sf::Vector2f(100,100));
-    shape.setOutlineThickness(10);
-    shape.setOutlineColor(sf::Color::Yellow);
-
-
-    sf::RectangleShape rectangle(sf::Vector2f(120.f,50.f));
-    rectangle.setFillColor(sf::Color::Yellow);
-    rectangle.setPosition(sf::Vector2f(60,60));
-    rectangle.setOutlineThickness(10);
-    rectangle.setOutlineColor(sf::Color::Green);
-    rectangle.setOrigin(rectangle.getSize()/2.f);
-    rectangle.setRotation(45);
-
-    sf::RectangleShape line(sf::Vector2f(300.f,3.f));
-    line.setPosition(sf::Vector2f(300,100));
-    line.setFillColor(sf::Color::Blue);
-    line.rotate(45.f);
-
 
     //--------------------------INITIALIZE---------------------------------------------------------
+
+    //--------------------------LOAD---------------------------------------------------------
+
+    sf::Texture playerTexture;
+    sf::Sprite playerSprite;
+
+    if(playerTexture.loadFromFile("C:/Users/mertc/CLionProjects/RPG-Game/Assets/Player/Textures/SpriteSheet.png")) {
+        std::cout<<"Player Texture Loaded"<<std::endl;
+        playerSprite.setTexture(playerTexture);
+
+        //X, Y, Width, Height
+        int XIndex=8;
+        int YIndex=3;
+        playerSprite.setTextureRect(sf::IntRect(XIndex*64,YIndex*64,64,64));
+        playerSprite.setScale(sf::Vector2f(3,3));
+    }
+    else {std::cout<<"Player Texture Error"<<std::endl;}
+
+    //--------------------------LOAD---------------------------------------------------------
 
     //main game loop
     while (window.isOpen()) {
@@ -36,13 +36,32 @@ int main() {
             if(event.type==sf::Event::Closed) {
                 window.close();
             }
+
+            // if(event.type== sf::Event::KeyPressed) {
+            //     if(event.key.code==sf::Keyboard::D){
+            //         sf::Vector2f position=playerSprite.getPosition();
+            //         playerSprite.setPosition(position+ sf::Vector2f(10 ,0));
+            //     }
+            // } //not good
+            sf::Vector2f position=playerSprite.getPosition();
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                    playerSprite.setPosition(position+ sf::Vector2f(10 ,0));
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+                playerSprite.setPosition(position - sf::Vector2f(10,0));
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                playerSprite.setPosition(position + sf::Vector2f(0,10));
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+                playerSprite.setPosition(position - sf::Vector2f(0,10));//or (position + sf::Vector2f(0,-10))
+            }
+
             //------------------------UPDATE---------------------------------------------------------
 
             //------------------------DRAW---------------------------------------------------------
             window.clear(sf::Color::Black);
-            window.draw(shape);
-            window.draw(rectangle);
-            window.draw(line);
+            window.draw(playerSprite);
             window.display();
             //------------------------DRAW---------------------------------------------------------
         }
