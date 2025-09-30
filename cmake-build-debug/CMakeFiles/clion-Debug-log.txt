@@ -1,18 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2024.2.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\mertc\CLionProjects\RPG-Game -B C:\Users\mertc\CLionProjects\RPG-Game\cmake-build-debug
--- Looking for sys/types.h
--- Looking for sys/types.h - found
--- Looking for stdint.h
--- Looking for stdint.h - found
--- Looking for stddef.h
--- Looking for stddef.h - found
--- Check size of void*
--- Check size of void* - done
--- Found OpenGL: opengl32
--- Looking for dinput.h
--- Looking for dinput.h - found
--- Found OpenAL: C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libopenal32.a
--- Found VORBIS: C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libvorbisenc.a;C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libvorbisfile.a;C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libvorbis.a;C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libogg.a
--- Found FLAC: C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/extlibs/libs-mingw/x64/libFLAC.a
--- Configuring done (20.9s)
+-- Configuring done (2.2s)
 -- Generating done (0.1s)
 -- Build files have been written to: C:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug
