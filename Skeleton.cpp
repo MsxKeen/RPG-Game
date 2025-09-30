@@ -3,28 +3,37 @@
 
 void Skeleton::Initialize() {
 
-}
-void Skeleton::Update() {
+    boundingRectangle.setFillColor(sf::Color::Transparent);
+    boundingRectangle.setOutlineColor(sf::Color::Blue);
+    boundingRectangle.setOutlineThickness(1);
 
-}
-void Skeleton::Draw(sf::RenderWindow& window) {
-    window.draw(Sprite);
+    size=sf::Vector2i(64,64);
 }
 void Skeleton::Load() {
     if(Texture.loadFromFile("C:/Users/mertc/CLionProjects/RPG-Game/Assets/Skeleton/Textures/SpriteSheet.png")){
         std::cout<<"Player Texture Loaded"<<std::endl;
-        Sprite.setTexture(Texture);
-        Sprite.setPosition(sf::Vector2f(400,100));
+        sprite.setTexture(Texture);
+        sprite.setPosition(sf::Vector2f(400,100));
 
 
         //X, Y, Width, Height
         int XIndex=0;
         int YIndex=2;
-        Sprite.setTextureRect(sf::IntRect(XIndex*64,YIndex*64,64,64));
-        Sprite.setScale(sf::Vector2f(3,3));
+        sprite.setTextureRect(sf::IntRect(XIndex*size.x,YIndex*size.y,size.x,size.y));
+        sprite.setScale(sf::Vector2f(3,3));
+
+        boundingRectangle.setSize(sf::Vector2f(size.x * sprite.getScale().x,size.y * sprite.getScale().y));
 
 
     } else {std::cout<<"Player Texture Error"<<std::endl;}
 }
+void Skeleton::Update(float deltaTime) {
+    boundingRectangle.setPosition(sprite.getPosition());
+}
+void Skeleton::Draw(sf::RenderWindow& window) {
+    window.draw(sprite);
+    window.draw(boundingRectangle);
+}
+
 
 

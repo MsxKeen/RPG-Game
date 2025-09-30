@@ -4,14 +4,16 @@
 
 class Skeleton {
     sf::Texture Texture;
+    sf::RectangleShape boundingRectangle;
+    sf::Vector2i size;
 public:
-    sf::Sprite Sprite;
+    sf::Sprite sprite;
 
 public:
     void Load();
     void Draw(sf::RenderWindow& window);
     void Initialize();
-    void Update();
+    void Update(float deltaTime);
 };
 
 
