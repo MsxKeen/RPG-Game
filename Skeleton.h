@@ -10,6 +10,8 @@ public:
     sf::Sprite sprite;
 
 public:
+    Skeleton();
+    ~Skeleton();
     void Load();
     void Draw(sf::RenderWindow& window);
     void Initialize();

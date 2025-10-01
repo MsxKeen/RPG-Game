@@ -81,6 +81,14 @@ build CMakeFiles/RPG_Game.dir/Math.cpp.obj: CXX_COMPILER__RPG_Game_unscanned_Deb
   OBJECT_DIR = CMakeFiles\RPG_Game.dir
   OBJECT_FILE_DIR = CMakeFiles\RPG_Game.dir
 
+build CMakeFiles/RPG_Game.dir/FrameRates.cpp.obj: CXX_COMPILER__RPG_Game_unscanned_Debug C$:/Users/mertc/CLionProjects/RPG-Game/FrameRates.cpp || cmake_object_order_depends_target_RPG_Game
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\RPG_Game.dir\FrameRates.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/mertc/CLionProjects/RPG-Game/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles\RPG_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\RPG_Game.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RPG_Game
@@ -89,7 +97,7 @@ build CMakeFiles/RPG_Game.dir/Math.cpp.obj: CXX_COMPILER__RPG_Game_unscanned_Deb
 #############################################
 # Link the executable RPG_Game.exe
 
-build RPG_Game.exe: CXX_EXECUTABLE_LINKER__RPG_Game_Debug CMakeFiles/RPG_Game.dir/main.cpp.obj CMakeFiles/RPG_Game.dir/Player.cpp.obj CMakeFiles/RPG_Game.dir/Skeleton.cpp.obj CMakeFiles/RPG_Game.dir/Math.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
+build RPG_Game.exe: CXX_EXECUTABLE_LINKER__RPG_Game_Debug CMakeFiles/RPG_Game.dir/main.cpp.obj CMakeFiles/RPG_Game.dir/Player.cpp.obj CMakeFiles/RPG_Game.dir/Skeleton.cpp.obj CMakeFiles/RPG_Game.dir/Math.cpp.obj CMakeFiles/RPG_Game.dir/FrameRates.cpp.obj | _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/sfml-build/lib/libsfml-graphics-s-d.a  _deps/sfml-build/lib/libsfml-window-s-d.a  _deps/sfml-build/lib/libsfml-system-s-d.a  -lopengl32  -lwinmm  -lgdi32  _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RPG_Game.dir
