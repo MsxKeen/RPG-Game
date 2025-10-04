@@ -41,9 +41,11 @@ int main() {
                 window.close();
             }
 
+        sf::Vector2f mousePosition=sf::Vector2f(sf::Mouse::getPosition(window));
+
            frames.Update(deltaTime);
            skeleton.Update(deltaTime);
-           player.Update(deltaTime,skeleton);
+           player.Update(deltaTime,skeleton,mousePosition);
 
             //------------------------DRAW---------------------------------------------------------
             window.clear(sf::Color::Black);

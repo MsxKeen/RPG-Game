@@ -1,6 +1,6 @@
 #include "Skeleton.h"
 #include <iostream>
-Skeleton::Skeleton() {
+Skeleton::Skeleton():health(100) {
 
 }
 Skeleton::~Skeleton() {
@@ -33,14 +33,34 @@ void Skeleton::Load() {
 
 
     } else {std::cout<<"Player Texture Error"<<std::endl;}
+
+    if(font.loadFromFile("C:/Users/mertc/CLionProjects/RPG-Game/Assets/Fonts/WonderFont.ttf")) {
+        std::cout<<"Font loaded"<<std::endl;
+        healthText.setFont(font);
+        healthText.setString(std::to_string(health));
+
+    }else {
+        std::cout<<"Font Error"<<std::endl;
+    }
+}
+void Skeleton::ReduceHealth(int hp) {
+    health -=hp;
+    healthText.setString(std::to_string(health));
+
 }
 void Skeleton::Update(float deltaTime) {
-    boundingRectangle.setPosition(sprite.getPosition());
+    if(health >0) {
+        boundingRectangle.setPosition(sprite.getPosition());
+        healthText.setPosition(sprite.getPosition());
+    }
 }
 void Skeleton::Draw(sf::RenderWindow& window) {
-    window.draw(sprite);
-    window.draw(boundingRectangle);
-}
+    if(health >0) {
+        window.draw(sprite);
 
+        window.draw(boundingRectangle);
+        window.draw(healthText);
+    }
+}
 
 

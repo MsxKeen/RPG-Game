@@ -24,5 +24,7 @@ add_executable(RPG_Game main.cpp
         Math.h
         FrameRates.cpp
         FrameRates.h
+        Bullet.cpp
+        Bullet.h
 )
 target_link_libraries(RPG_Game sfml-graphics)

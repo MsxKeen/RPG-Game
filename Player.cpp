@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Math.h"
 
-Player::Player() : bulletSpeed(0.5f),playerSpeed(1.0f){
+Player::Player() : playerSpeed(1.0f),maxFireRate(600),fireRateTimer(0){
 
 }
 Player::~Player() {
@@ -35,7 +35,7 @@ void Player::Load() {
     }
     else {std::cout<<"Player Texture Error"<<std::endl;}
 }
-void Player::Update(float deltaTime,Skeleton& skeleton) {
+void Player::Update(float deltaTime,Skeleton& skeleton,sf::Vector2f& mousePosition) {
     sf::Vector2f position=sprite.getPosition();
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
@@ -51,29 +51,36 @@ void Player::Update(float deltaTime,Skeleton& skeleton) {
         sprite.setPosition(position + sf::Vector2f(0,-1)* playerSpeed * deltaTime);//or (position + sf::Vector2f(0,-10))
     }
 
-    if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-        bullets.push_back(sf::RectangleShape(sf::Vector2f(50,25)));
+ //------------------------------------Bullet---------------------------------
+    fireRateTimer+=deltaTime;
 
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && fireRateTimer >= maxFireRate) {
+        bullets.push_back(Bullet());
         int i=bullets.size()-1;
-        bullets[i].setPosition(sprite.getPosition());
-    }
-    for(size_t i =0; i<bullets.size();i++) {
-        sf::Vector2f bulletDirection = skeleton.sprite.getPosition()-bullets[i].getPosition();
-        bulletDirection = Math::NormalizeVector(bulletDirection);
-        bullets[i].setPosition(bullets[i].getPosition()+ bulletDirection * bulletSpeed * deltaTime);
+        bullets[i].Initialize(mousePosition,sprite.getPosition(),0.5f);
 
+
+        fireRateTimer=0;
+    }
+
+    for(size_t i =0; i<bullets.size();i++) {
+        bullets[i].Update(deltaTime);
+        if(skeleton.health>0) {
+            if(Math::DidRectCollide(bullets[i].GetGlobalBounds(),skeleton.sprite.getGlobalBounds())) {
+                skeleton.ReduceHealth(10);
+                bullets.erase(bullets.begin()+i);
+            }
+        }
     }
     boundingRectangle.setPosition(sprite.getPosition());
 
-    if(Math::DidRectCollide(sprite.getGlobalBounds(),skeleton.sprite.getGlobalBounds())) {
-        std::cout<<"Player Collision"<<std::endl;
-    }
+
 
 }
 void Player::Draw(sf::RenderWindow& window) {
     window.draw(sprite);
     window.draw(boundingRectangle);
     for(size_t i =0; i<bullets.size();i++) {
-        window.draw(bullets[i]);
+        bullets[i].Draw(window);
     }
 }
