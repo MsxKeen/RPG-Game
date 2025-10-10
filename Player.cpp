@@ -35,20 +35,20 @@ void Player::Load() {
     }
     else {std::cout<<"Player Texture Error"<<std::endl;}
 }
-void Player::Update(float deltaTime,Skeleton& skeleton,sf::Vector2f& mousePosition) {
+void Player::Update(double deltaTime,Skeleton& skeleton,sf::Vector2f& mousePosition) {
     sf::Vector2f position=sprite.getPosition();
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-        sprite.setPosition(position+ sf::Vector2f(1 ,0) * playerSpeed * deltaTime);
+        sprite.setPosition(position+ sf::Vector2f(1 ,0) * playerSpeed * (float)deltaTime);
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        sprite.setPosition(position + sf::Vector2f(-1,0)* playerSpeed * deltaTime);
+        sprite.setPosition(position + sf::Vector2f(-1,0)* playerSpeed * (float)deltaTime);
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        sprite.setPosition(position + sf::Vector2f(0,1)* playerSpeed * deltaTime);
+        sprite.setPosition(position + sf::Vector2f(0,1)* playerSpeed * (float)deltaTime);
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-        sprite.setPosition(position + sf::Vector2f(0,-1)* playerSpeed * deltaTime);//or (position + sf::Vector2f(0,-10))
+        sprite.setPosition(position + sf::Vector2f(0,-1)* playerSpeed * (float)deltaTime);//or (position + sf::Vector2f(0,-10))
     }
 
  //------------------------------------Bullet---------------------------------

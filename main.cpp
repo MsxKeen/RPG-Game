@@ -3,6 +3,7 @@
 #include "FrameRates.h"
 #include "Player.h"
 #include "Skeleton.h"
+#include "Map.h"
 
 
 
@@ -14,16 +15,19 @@ int main() {
     window.setFramerateLimit(120);
     //--------------------------INITIALIZE---------------------------------------------------------
     FrameRates frames;
+    Map map;
     Player player;
     Skeleton skeleton;
     //--------------------------INITIALIZE---------------------------------------------------------
     frames.Initialize();
+    map.Initialize();
     skeleton.Initialize();
     player.Initialize();
     //--------------------------INITIALIZE---------------------------------------------------------
 
     //-----------------------------LOAD----------------------------------------------------------------
     frames.Load();
+    map.Load();
     player.Load();
     skeleton.Load();
     //-----------------------------LOAD----------------------------------------------------------------
@@ -44,11 +48,13 @@ int main() {
         sf::Vector2f mousePosition=sf::Vector2f(sf::Mouse::getPosition(window));
 
            frames.Update(deltaTime);
+           map.Update(deltaTime);
            skeleton.Update(deltaTime);
            player.Update(deltaTime,skeleton,mousePosition);
 
             //------------------------DRAW---------------------------------------------------------
             window.clear(sf::Color::Black);
+            map.Draw(window);
             skeleton.Draw(window);
             player.Draw(window);
             frames.Draw(window);

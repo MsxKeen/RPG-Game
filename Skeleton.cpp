@@ -48,7 +48,7 @@ void Skeleton::ReduceHealth(int hp) {
     healthText.setString(std::to_string(health));
 
 }
-void Skeleton::Update(float deltaTime) {
+void Skeleton::Update(double deltaTime) {
     if(health >0) {
         boundingRectangle.setPosition(sprite.getPosition());
         healthText.setPosition(sprite.getPosition());
